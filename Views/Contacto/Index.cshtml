@@ -1,0 +1,94 @@
+@model formulario.Models.Contacto;
+
+
+
+<h1 >Complete web form</h1>
+
+<div class="text-align" >
+
+    <form asp-controller="Contacto" asp-action="Create">
+        <div asp-validation-summary ="ModelOnly" class="text-danger"></div>
+
+        <div class ="col-sm-6 col-sm-offset-1">
+        <b><label asp-for="Name" class="control-label"></label></b>
+        <input asp-for="Name" class="form-control"/>
+        <span asp-validation-for="Name" class="text-danger" ></span>
+        </div>
+
+        <br>
+
+        <div class ="col-sm-6 col-sm-offset-1">
+        <b><label asp-for="LastName" class="control-label"></label></b>
+        <input asp-for="LastName" class="form-control"/>
+        <span asp-validation-for="LastName" class="text-danger" ></span>
+        </div>
+
+        <br>
+
+        <div class ="col-sm-6 col-sm-offset-1">
+        <b><label asp-for="JobTitle" class="control-label"></label></b>
+        <input asp-for="JobTitle" class="form-control"/>
+        <span asp-validation-for="JobTitle" class="text-danger" ></span>
+        </div>
+
+        <br>
+
+        <div class ="col-sm-3 col-sm-offset-1">
+        <b><label asp-for="num" class="control-label"></label></b>    
+        <select asp-for="num" class="form-control">
+            <option value="0" selected>Select an option</option>
+            <option value="1">0-1</option>
+            <option value="2">2-4</option>
+            <option value="3">5-9</option>
+            <option value="4">10+</option>
+        </select>
+        <span asp-validation-for="num" class="text-danger"></span>
+        </div>
+
+        <br>
+
+        <div class="col-sm-8 col-sm-offset-2">
+            <b><label asp-for="radios" class="control-label"></label></b>
+            <br><input type="radio" asp-for="radios" value="radio-button-1">High School
+            <br><input type="radio" asp-for="radios" value="radio-button-2">College
+            <br><input type="radio" asp-for="radios" value="radio-button-3">Grad School
+            <span asp-validation-for="radios" class="text-danger"></span>
+
+        </div>
+
+        <br>
+
+        <div class="form-group">
+        <b><label asp-for="Sex" class="control-label"></label></b> 
+        <br><input asp-for="Sex"  class="form-check-input" type="checkbox"  />Male
+        <br><input asp-for="Sex"  class="form-check-input" type="checkbox" />Female
+        <br><input asp-for="Sex"  class="form-check-input" type="checkbox" />Prefer not to say
+        <span asp-validation-for="Sex" class="text-danger"></span>
+        </div>
+
+        <br>
+
+        <div class ="col-sm-3 col-sm-offset-1">
+        <b><label asp-for="num" class="control-label"></label></b>    
+        <select asp-for="num" class="form-control">
+            <option value="0" selected>Select an option</option>
+            <option value="1">0-1</option>
+            <option value="2">2-4</option>
+            <option value="3">5-9</option>
+            <option value="4">10+</option>
+        </select>
+        <span asp-validation-for="num" class="text-danger"></span>
+        </div>
+
+        <br>
+
+        <div class ="col-sm-3 col-sm-offset-1">
+        <b><label asp-for="Fecha" class="control-label"></label></b>
+        <input asp-for="Fecha" class="form-control" />
+        <span asp-validation-for="Fecha" class="text-danger"></span>
+        </div>
+
+        <br><button type="submit" class="btn btn-primary" href="/Views/Contacto/submit.cshtml">Submit</button>
+    </form>
+    <br><h1>@ViewData["Message"]</h1>
+</div>
